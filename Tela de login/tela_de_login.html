@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tela de login</title>
+
+</head>
+
+<body>
+    <div>
+        <h1>Login</h1>
+        <input type="text" placeholder="Email">
+        <br><br>
+        <input type="password" placeholder="Senha">
+        <br><br>
+        <button>Enviar</button>
+        <br><br>
+        <br><br>
+        <p onclick="redirectToNewPage()">Ainda nao tem uma conta?<a href="#"> Criar conta</a></p>
+    </div>
+    <script>
+        function redirectToNewPage() {
+            // Aqui você pode definir a URL da página para a qual deseja redirecionar após o login.
+            var newPageURL = 'http://127.0.0.1:5500/analise%20orientada%20a%20objetos/Tela%20do%20sistema/tela_do_sistema.html';
+            window.location.href = newPageURL;
+        }
+    </script>
+</body>
+
+</html>

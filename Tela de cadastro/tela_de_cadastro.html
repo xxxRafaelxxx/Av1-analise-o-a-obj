@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tela de cadastro</title>
+
+</head>
+
+<body>
+    <div>
+        <h1>Cadastra-se Aqui</h1>
+
+        <input type="text" placeholder="Nome Completo">
+        <br><br>
+        <input type="text" placeholder="Email">
+        <br><br>
+        <input type="password" placeholder="Senha">
+        <br><br>
+        <input type="date" placeholder="">
+        <br><br>
+        <input type="radio" placeholder="Masculino">
+        <input type="radio" placeholder="Feminino">
+        <input type="radio" placeholder="Outro">
+        <br><br>
+        <button onclick="redirectToNewPage()">Cadastra-se</button>
+        <br><br>
+        <br><br>
+        <p>Ja possui tem uma conta?<a href="#"> Fazer Login</a></p>
+    </div>
+    <script>
+        function redirectToNewPage() {
+            // Aqui você pode definir a URL da página para a qual deseja redirecionar após o login.
+            var newPageURL = 'http://127.0.0.1:5500/analise%20orientada%20a%20objetos/Tela%20de%20login/tela_de_login.html';
+            window.location.href = newPageURL;
+        }
+    </script>
+</body>
+
+</html>
