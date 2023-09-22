@@ -4,15 +4,18 @@ body {
 }
 
 div {
-    background-color: rgb(0, 0, 0);
+    background-color: #00000aca;
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 80px;
     border-radius: 15px;
     color: white;
     text-align: center;
+    width: 80%;
+    /* Ajuste a largura conforme necessário */
+    max-width: 600px;
 }
 
 input {
@@ -22,6 +25,7 @@ input {
     font-size: 15px;
     width: 310px;
 }
+
 
 button {
     background-color: dodgerblue;
@@ -38,4 +42,21 @@ button {
 button:hover {
     background-color: deepskyblue;
 
+}
+
+/* Estilize o rótulo "Sexo" para movê-lo para a lateral */
+label[for="Sexo"] {
+    position: absolute;
+    left: 28%;
+    top: 48em;
+
+}
+
+/* Estilize o campo de seleção de sexo para ajustar o tamanho */
+select#Sexo {
+    position: absolute;
+    outline: none;
+    left: 34%;
+    width: 38%;
+    height: 42px
 }
