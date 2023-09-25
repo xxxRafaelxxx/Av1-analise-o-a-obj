@@ -1,0 +1,244 @@
+/* Estilos gerais para a página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #0077b6;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    background-color: #023e8a;
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Estilos para o conteúdo principal */
+.conteudo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Estilos para as abas */
+.aba {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.aba h2 {
+    color: #0077b6;
+}
+
+/* Estilos para a tabela de notas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilos para o rodapé */
+footer {
+    background-color: #0077b6;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#perfil #cursos {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#perfil #cursos h3 {
+    font-size: 18px;
+    color: #0077b6;
+}
+
+#avisos-content {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Estilos para a aba Boletim */
+#boletim {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    /* Ajuste a largura conforme necessário */
+    height: auto;
+    /* Define a altura como "auto" para manter a proporção */
+    margin: 0 auto;
+    /* Centraliza horizontalmente */
+}
+
+/* Estilos para a aba "Aulas" */
+#aulas {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    /* Ajuste a largura conforme necessário */
+    height: auto;
+    /* Define a altura como "auto" para manter a proporção */
+    margin: 0 auto;
+    /* Centraliza horizontalmente */
+}
+
+#aulas a {
+    font-size: 18px;
+    /* Altere o tamanho da fonte conforme necessário */
+    color: #0077b6;
+    /* Altere a cor dos links conforme necessário */
+    text-decoration: none;
+    /* Remova a decoração de sublinhado, se preferir */
+}
+
+/* Pseudo-classe hover para destacar links quando o mouse passa por cima */
+#aulas a:hover {
+    text-decoration: underline;
+    /* Adicione sublinhado ao passar o mouse sobre os links */
+}
+
+/* Estilos para a aba "Perfil" */
+#perfil {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    /* Ajuste a largura conforme necessário */
+    height: auto;
+    /* Define a altura como "auto" para manter a proporção */
+    margin: 0 auto;
+    /* Centraliza horizontalmente */
+}
+
+#perfil label {
+    font-weight: bold;
+}
+
+#perfil input[type="text"] {
+    background-color: #fff;
+    margin: none;
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 10px;
+    width: 20%;
+}
+
+
+#perfil input[readonly] {
+    color: #666;
+    /* Torna o campo somente leitura mais claro */
+}
+
+#perfil input[type="date"] {
+    background-color: #fff;
+    margin: none;
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 10px;
+    width: 11%;
+}
+
+#perfil input[type="email"] {
+    background-color: #fff;
+    margin: none;
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 10px;
+    width: 20%;
+}
+
+#perfil input[type="tel"] {
+    background-color: #fff;
+    margin: none;
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 10px;
+    width: 18%;
+}
+
+/* Estilos para as abas quando o mouse passa por cima */
+nav ul li {
+    margin-right: 10%;
+    /* Aumenta a margem direita entre as abas */
+}
+
+/* Estilos para as abas quando o mouse passa por cima */
+nav ul li a:hover {
+    background-color: #3d93cd;
+    /* Altere a cor de fundo conforme desejado */
+    color: #0077b6;
+    /* Altere a cor do texto conforme desejado */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Adiciona uma transição suave */
+    cursor: pointer;
+    /* Altera o cursor ao passar o mouse */
+}
+
+/* Estilos para o rodapé */
+/* Estilos para o rodapé */
+footer {
+    background-color: #0077b6;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

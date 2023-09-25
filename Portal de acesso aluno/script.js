@@ -20,10 +20,10 @@ document.querySelector('nav ul').addEventListener('click', function (e) {
 
 // Dados fictícios do boletim
 const notas = [
-    { disciplina: "Matemática", nota: 8.5 },
-    { disciplina: "História", nota: 7.0 },
-    { disciplina: "Geografia", nota: 6.5 },
-    { disciplina: "Inglês", nota: 9.0 },
+    { disciplina: "Calculo 01", nota: "-" },
+    { disciplina: "Logica de Programação", nota: 7.0 },
+    { disciplina: "Html e Css Básico", nota: 6.5 },
+    { disciplina: "Estrutura de Dados", nota: 9.0 },
 ];
 
 // Carrega as notas na tabela do boletim
@@ -94,3 +94,24 @@ function adicionarAviso(mensagem) {
 
 // Adicione um novo aviso chamando a função
 adicionarAviso("Novo aviso: Aula extra na sexta-feira.");
+
+// Obtém o elemento de entrada de telefone
+const telefoneInput = document.getElementById('telefone');
+
+// Adiciona um ouvinte de evento 'input' para o campo de telefone
+telefoneInput.addEventListener('input', function () {
+    // Remove todos os caracteres não numéricos do valor de entrada
+    const numeroTelefone = this.value.replace(/\D/g, '');
+
+    // Verifica se o número de telefone tem pelo menos 10 dígitos
+    if (numeroTelefone.length >= 10) {
+        // Formata o número de telefone como (XX) XXXXX-XXXX
+        const numeroFormatado = `(${numeroTelefone.slice(0, 2)}) ${numeroTelefone.slice(2, 7)}-${numeroTelefone.slice(7, 11)}`;
+
+        // Define o valor formatado de volta no campo de telefone
+        this.value = numeroFormatado;
+    } else {
+        // Se o número não tiver pelo menos 10 dígitos, mantém o valor original
+        this.value = numeroTelefone;
+    }
+});

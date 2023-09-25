@@ -1,62 +1,86 @@
+/* Estilos gerais para a página */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(188, 186, 186)
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
+/* Estilos para o formulário */
 div {
-    background-color: #00000aca;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 80px;
-    border-radius: 15px;
-    color: white;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 80%;
-    /* Ajuste a largura conforme necessário */
+    /* Largura máxima do formulário */
     max-width: 600px;
+    /* Ajuste a largura conforme necessário */
+    margin: 0 auto;
+    /* Centraliza horizontalmente */
 }
 
-input {
-    padding: 15px;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    width: 310px;
+h1 {
+    color: #0077b6;
 }
 
-
-button {
-    background-color: dodgerblue;
-    position: absolute;
-    right: 43%;
-    border: none;
-    padding: 15px;
-    border-radius: 10px;
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: deepskyblue;
-
+/* Estilos para os campos de entrada e seleção */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+select {
+    width: 65%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
 }
 
 /* Estilize o rótulo "Sexo" para movê-lo para a lateral */
 label[for="Sexo"] {
-    position: absolute;
-    left: 28%;
-    top: 48em;
-
+    font-weight: bold;
+    margin-right: 10px;
+    color: #0077b6;
 }
 
 /* Estilize o campo de seleção de sexo para ajustar o tamanho */
 select#Sexo {
-    position: absolute;
-    outline: none;
-    left: 34%;
-    width: 38%;
-    height: 42px
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #0077b6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #023e8a;
+}
+
+p {
+    font-size: 14px;
+}
+
+a {
+    color: #0077b6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
