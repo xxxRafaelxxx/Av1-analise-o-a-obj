@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Professor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Portal do Professor</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#avisos">Avisos</a></li>
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#faltas">Faltas</a></li>
+            <li><a href="#notas">Notas</a></li>
+            <li><a href="#aulas">Aulas</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="conteudo">
+            <section id="avisos" class="aba">
+                <h2>Avisos</h2>
+                <div id="avisos-content">
+                    <!-- O conteúdo dos avisos será inserido aqui pelo JavaScript -->
+                </div>
+            </section>
+            <section id="perfil" class="aba">
+                <h2>Perfil</h2>
+                <form id="perfil-form">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" readonly><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br><br>
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco"><br><br>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10}"><br><br>
+                    <label for="dataNascimento">Data de Nascimento:</label>
+                    <input type="date" id="dataNascimento" name="dataNascimento" readonly><br><br>
+                    <label for="cursos">Curso:</label>
+                    <input type="text" id="cursos" name="cursos" readonly value="Ciência da Computação"><br><br>
+                    <button type="submit">Salvar</button>
+                </form>
+            </section>
+            <section id="notas" class="aba">
+                <h2>Notas</h2>
+                <label for="materias">Selecione a matéria:</label>
+                <select id="materias" onchange="mostrarNotas()">
+                    <option value="logica">Lógica de Programação</option>
+                    <option value="estrutura">Estrutura de Dados</option>
+                </select>
+
+                <!-- Tabela para exibir as notas -->
+                <table id="notas-table">
+                    <tr>
+                        <th>Aluno</th>
+                        <th>Nota</th>
+                    </tr>
+                    <!-- As notas serão inseridas aqui dinamicamente pelo JavaScript -->
+                </table>
+            </section>
+            <!-- Seção de Faltas -->
+            <section id="faltas" class="aba">
+                <h2>Faltas</h2>
+                <label for="disciplinas-faltas">Selecione a matéria:</label>
+                <select id="disciplinas-faltas" onchange="mostrarFaltas()">
+                    <option value="logica">Lógica de Programação</option>
+                    <option value="estrutura">Estrutura de Dados</option>
+                    <!-- Adicione mais disciplinas conforme necessário -->
+                </select>
+
+                <table id="faltas-table">
+                    <tr>
+                        <th>Aluno</th>
+                        <th>Faltas</th>
+                    </tr>
+                    <!-- As faltas serão inseridas aqui dinamicamente pelo JavaScript -->
+                </table>
+            </section>
+
+            <section id="aulas" class="aba">
+                <h2>Aulas</h2>
+                <ul>
+
+                    <br><br>
+                    <li><a href="link-para-aula-de-matematica">Lógica de Programação - aula 01</a></li>
+                    <br><br>
+                    <li><a href="link-para-aula-de-matematica">Lógica de Programação - aula 02</a></li>
+                    <br><br>
+                    <li><a href="link-para-aula-de-matematica">Lógica de Programação - aula 03</a></li>
+                    <br><br>
+                    <li><a href="link-para-aula-de-matematica">Estrutura de Dados - aula 01</a></li>
+
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Portal do Professor</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
