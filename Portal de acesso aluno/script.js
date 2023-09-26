@@ -46,11 +46,21 @@ const perfilForm = document.getElementById("perfil-form");
 const nomeInput = document.getElementById("nome");
 const emailInput = document.getElementById("email");
 const idadeInput = document.getElementById("idade");
-
+const dataInput = document.getElementById("dataNascimento");
 // Simula dados do perfil do aluno
 nomeInput.value = "João da Silva";
 emailInput.value = "joao.silva@example.com";
-idadeInput.value = 20;
+
+
+function gerarDataAleatoria() {
+    const data = new Date(+(new Date()) - Math.floor(Math.random() * 31536000000000)); // 31536000000000 milissegundos equivalem a um ano
+    const ano = Math.floor(Math.random() * (2000 - 1900 + 1)) + 1930; // Gere um ano aleatório entre 1900 e 2000
+    const mes = String(data.getMonth() + 1).padStart(2, "0"); // Mês começa do zero
+    const dia = String(data.getDate()).padStart(2, "0");
+    return `${ano}-${mes}-${dia}`;
+}
+
+dataInput.value = gerarDataAleatoria();
 
 // Evento para salvar o perfil
 perfilForm.addEventListener("submit", function (e) {

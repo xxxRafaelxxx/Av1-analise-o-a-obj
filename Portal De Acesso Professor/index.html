@@ -23,10 +23,20 @@
     </nav>
     <main>
         <div class="conteudo">
+            <!-- Adicione este código à seção de avisos no seu HTML -->
             <section id="avisos" class="aba">
                 <h2>Avisos</h2>
                 <div id="avisos-content">
                     <!-- O conteúdo dos avisos será inserido aqui pelo JavaScript -->
+                    <ul id="lista-avisos">
+                        <!-- Avisos serão adicionados dinamicamente aqui -->
+                    </ul>
+                    <!-- Formulário para adicionar novos avisos -->
+                    <form id="novo-aviso-form">
+                        <label for="novo-aviso">Novo Aviso:</label>
+                        <input type="text" id="novo-aviso" name="novoAviso" required>
+                        <button type="submit">Adicionar Aviso</button>
+                    </form>
                 </div>
             </section>
             <section id="perfil" class="aba">
@@ -42,8 +52,10 @@
                     <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10}"><br><br>
                     <label for="dataNascimento">Data de Nascimento:</label>
                     <input type="date" id="dataNascimento" name="dataNascimento" readonly><br><br>
-                    <label for="cursos">Curso:</label>
-                    <input type="text" id="cursos" name="cursos" readonly value="Ciência da Computação"><br><br>
+                    <label for="cursos">Disciplina:</label>
+                    <input type="text" id="cursos" name="cursos" readonly value="Logica De Programação"><br><br>
+                    <label for="cursos">Disciplina:</label>
+                    <input type="text" id="cursos" name="cursos" readonly value="Estrutura De Dados"><br><br>
                     <button type="submit">Salvar</button>
                 </form>
             </section>
@@ -60,6 +72,7 @@
                     <tr>
                         <th>Aluno</th>
                         <th>Nota</th>
+                        <th>Ações</th> <!-- Coluna para botões de ação -->
                     </tr>
                     <!-- As notas serão inseridas aqui dinamicamente pelo JavaScript -->
                 </table>
@@ -74,10 +87,12 @@
                     <!-- Adicione mais disciplinas conforme necessário -->
                 </select>
 
+                <!-- Tabela para exibir as faltas -->
                 <table id="faltas-table">
                     <tr>
                         <th>Aluno</th>
                         <th>Faltas</th>
+                        <th>Ações</th> <!-- Coluna para botões de ação -->
                     </tr>
                     <!-- As faltas serão inseridas aqui dinamicamente pelo JavaScript -->
                 </table>
@@ -86,7 +101,6 @@
             <section id="aulas" class="aba">
                 <h2>Aulas</h2>
                 <ul>
-
                     <br><br>
                     <li><a href="link-para-aula-de-matematica">Lógica de Programação - aula 01</a></li>
                     <br><br>
@@ -95,8 +109,15 @@
                     <li><a href="link-para-aula-de-matematica">Lógica de Programação - aula 03</a></li>
                     <br><br>
                     <li><a href="link-para-aula-de-matematica">Estrutura de Dados - aula 01</a></li>
-
                 </ul>
+                <form id="upload-aulas-form">
+                    <h3>Adicionar Nova Aula</h3>
+                    <label for="nova-aula">Nome da Aula:</label>
+                    <input type="text" id="nova-aula" name="novaAula" required>
+                    <label for="link-aula">Link da Aula:</label>
+                    <input type="url" id="link-aula" name="linkAula" required>
+                    <button type="submit">Adicionar</button>
+                </form>
             </section>
         </div>
     </main>

@@ -167,6 +167,22 @@ footer {
     /* Centraliza horizontalmente */
 }
 
+#avisos {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    /* Ajuste a largura conforme necessário */
+    height: auto;
+    /* Define a altura como "auto" para manter a proporção */
+    margin: 0 auto;
+    /* Centraliza horizontalmente */
+}
+
 #perfil label {
     font-weight: bold;
 }
