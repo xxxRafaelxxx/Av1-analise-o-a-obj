@@ -45,11 +45,8 @@ const perfilForm = document.getElementById("perfil-form");
 // Carrega dados fictícios no formulário de perfil
 const nomeInput = document.getElementById("nome");
 const emailInput = document.getElementById("email");
-const idadeInput = document.getElementById("idade");
 const dataInput = document.getElementById("dataNascimento");
-// Simula dados do perfil do aluno
-nomeInput.value = "João da Silva";
-emailInput.value = "joao.silva@example.com";
+
 
 
 function gerarDataAleatoria() {
@@ -80,12 +77,11 @@ function carregarInformacoesPerfil() {
     const telefoneInput = document.getElementById("telefone");
     const emailInput = document.getElementById("email");
 
-    // Simule carregar as informações do perfil
-    nomeInput.value = "João da Silva";
+    nomeInput.value = "Felipe Pereira";
+    emailInput.value = "felipe.pereira@aluno.com";
     dataNascimentoInput.value = "1995-01-01";
-    enderecoInput.value = "Rua Exemplo, 123";
-    telefoneInput.value = "1234567890";
-    emailInput.value = "joao@example.com";
+    enderecoInput.value = "Rua das Palmeiras 123,Bairro Jardim Tropical,Cidade: Salvador,CEP: 50.000-000,Bahia";
+    telefoneInput.value = "(71) 9 8239-7237";
 }
 
 // Chama a função para carregar informações do perfil na inicialização

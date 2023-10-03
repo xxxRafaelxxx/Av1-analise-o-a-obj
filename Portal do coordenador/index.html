@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Coordenador</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Portal do Coordenador</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#avisos">Avisos</a></li>
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#matricular">Matricular Alunos</a></li>
+            <li><a href="#cadastrarProfessores">Cadastrar Professores</a></li>
+            <li><a href="#notas">Notas</a></li>
+            <li><a href="#faltas">Faltas</a></li>
+
+        </ul>
+    </nav>
+    <main>
+        <div class="conteudo">
+            <!-- Adicione este código à seção de avisos no seu HTML -->
+            <section id="avisos" class="aba">
+                <h2>Avisos</h2>
+                <div id="avisos-content">
+                    <!-- O conteúdo dos avisos será inserido aqui pelo JavaScript -->
+                    <ul id="lista-avisos">
+                        <!-- Avisos serão adicionados dinamicamente aqui -->
+                    </ul>
+                    <!-- Formulário para adicionar novos avisos -->
+                    <form id="novo-aviso-form">
+                        <label for="novo-aviso">Novo Aviso:</label>
+                        <input type="text" id="novo-aviso" name="novoAviso" required>
+                        <button type="submit">Adicionar Aviso</button>
+                    </form>
+                </div>
+            </section>
+            <section id="perfil" class="aba">
+                <h2>Perfil</h2>
+                <form id="perfil-form">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" readonly><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br><br>
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco"><br><br>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10}"><br><br>
+                    <label for="dataNascimento">Data de Nascimento:</label>
+                    <input type="date" id="dataNascimento" name="dataNascimento" readonly><br><br>
+
+                    <button type="submit">Salvar</button>
+                </form>
+            </section>
+            <section id="matricular" class="aba"> <!-- Aba Matricular Alunos -->
+                <h2>Matricular Alunos</h2>
+                <form id="matricular-alunos-form">
+                    <label for="disciplinas-selecionadas">Selecione a disciplina:</label>
+                    <select id="disciplinas-selecionadas">
+                        <option value="calculo_01">Calculo 01</option>
+                        <option value="calculo_02">Calculo 02</option>
+                        <option value="logica">Lógica De Programação</option>
+                        <option value="estrutura">Estrutura de Dados</option>
+                        <option value="htmlECss">Html e Css Básico</option>
+                        <option value="poo">POO</option>
+
+                    </select>
+                    <label for="alunos-selecionados">Selecione o aluno:</label>
+                    <select id="alunos-selecionados">
+                        <option value="Amanda Almeida">Amanda Almeida</option>
+                        <option value="Ana Souza">Ana Souza</option>
+                        <option value="Beatriz Martins">Beatriz Martins</option>
+                        <option value="Bruno Rodrigues">Bruno Rodrigues</option>
+                        <option value="Camila Costa">Camila Costa</option>
+                        <option value="Felipe Pereira">Felipe Pereira</option>
+                        <option value="Gabriel Moreira">Gabriel Moreira</option>
+                        <option value="Guilherme Ferreira">Guilherme Ferreira</option>
+
+                    </select>
+                    <button type="submit">Matricular</button>
+                </form>
+            </section>
+            <section id="cadastrarProfessores" class="aba">
+                <h2>Cadastrar Professores</h2>
+                <form id="matricular-professores-form">
+                    <label for="disciplinas-selecionadas">Selecione a disciplina:</label>
+                    <select id="disciplinas-selecionadas">
+                        <option value="calculo_01">Calculo 01</option>
+                        <option value="calculo_02">Calculo 02</option>
+                        <option value="logica">Lógica De Programação</option>
+                        <option value="estrutura">Estrutura de Dados</option>
+                        <option value="htmlECss">Html e Css Básico</option>
+                        <option value="poo">POO</option>
+
+                    </select>
+                    <label for="professores-selecionados">Selecione o professor:</label>
+                    <select id="professores-selecionados">
+                        <option value="Thiago Rodrigues">Thiago Rodrigues</option>
+                        <option value="Thais Souza">Thais Souza</option>
+                        <option value="Pedro Martins">Pedro Martins</option>
+                        <option value="Ricardo Rodrigues">Bruno Rodrigues</option>
+                    </select>
+                    <button type="submit">Matricular</button>
+                </form>
+            </section>
+            <section id="notas" class="aba">
+                <h2>Notas</h2>
+                <label for="materias">Selecione a matéria:</label>
+                <select id="materias" onchange="mostrarNotas()">
+                    <option value="logica">Lógica de Programação</option>
+                    <option value="estrutura">Estrutura de Dados</option>
+                    <option value="calculo_01">Calculo 01</option>
+                    <option value="calculo_02">Calculo 02</option>
+                    <option value="htmlECss">Html e Css Básico</option>
+                    <option value="poo">POO</option>
+                </select>
+                <table id="notas-table">
+                    <tr>
+                        <th>Aluno</th>
+                        <th>Nota</th>
+                        <th>Ações</th>
+                    </tr>
+
+                </table>
+            </section>
+
+            <section id="faltas" class="aba">
+                <h2>Faltas</h2>
+                <label for="disciplinas-faltas">Selecione a matéria:</label>
+                <select id="disciplinas-faltas" onchange="mostrarFaltas()">
+                    <option value="logica">Lógica de Programação</option>
+                    <option value="estrutura">Estrutura de Dados</option>
+                    <option value="calculo_01">Calculo 01</option>
+                    <option value="calculo_02">Calculo 02</option>
+                    <option value="htmlECss">Html e Css Básico</option>
+                    <option value="poo">POO</option>
+                </select>
+
+
+                <table id="faltas-table">
+                    <tr>
+                        <th>Aluno</th>
+                        <th>Faltas</th>
+                        <th>Ações</th>
+                    </tr>
+
+                </table>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Portal do Coordenador</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

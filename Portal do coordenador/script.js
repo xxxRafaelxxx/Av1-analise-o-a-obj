@@ -10,10 +10,10 @@ function abrirAba(abaId) {
     });
 }
 
-
+// Evento para alternar entre abas quando os links são clicados
 document.querySelector('nav ul').addEventListener('click', function (e) {
     if (e.target.tagName === 'A') {
-        const alvo = e.target.getAttribute('href').substring(1);
+        const alvo = e.target.getAttribute('href').substring(1); // Remove o caractere "#" do href
         abrirAba(alvo);
     }
 });
@@ -23,24 +23,25 @@ const dataInput = document.getElementById("dataNascimento");
 const enderecoInput = document.getElementById("endereco");
 const telefoneInput = document.getElementById("telefone");
 
-nomeInput.value = "Thiago Rodrigues";
-emailInput.value = "thiago.rodrigues@professor.com";
-enderecoInput.value = "Rua da Amizade, 123, Bairro da Alegria, Cidade: Salvador, CEP: 40.000-000, Bahia";
-telefoneInput.value = "(71) 98765-4321";
+// Simula dados do perfil do aluno
+nomeInput.value = "Carlos Rodrigues";
+emailInput.value = "carlos.rodrigues@coordenador.com";
+enderecoInput.value = "Rua das Palmeiras 123, Bairro Jardim Tropical, Cidade: Salvador, CEP: 40.000-000, Bahia"
+telefoneInput.value = "(71) 9 8888-8888"
 
 function gerarDataAleatoria() {
-    const data = new Date(+(new Date()) - Math.floor(Math.random() * 31536000000000));
-    const ano = Math.floor(Math.random() * (2000 - 1900 + 1)) + 1930;
-    const mes = String(data.getMonth() + 1).padStart(2, "0");
+    const data = new Date(+(new Date()) - Math.floor(Math.random() * 31536000000000)); // 31536000000000 milissegundos equivalem a um ano
+    const ano = Math.floor(Math.random() * (2000 - 1900 + 1)) + 1930; // Gere um ano aleatório entre 1900 e 2000
+    const mes = String(data.getMonth() + 1).padStart(2, "0"); // Mês começa do zero
     const dia = String(data.getDate()).padStart(2, "0");
     return `${ano}-${mes}-${dia}`;
 }
 
 dataInput.value = gerarDataAleatoria();
 
-
+// Função para carregar notas com base na disciplina selecionada
 function mostrarNotas() {
-
+    // Obtém o valor selecionado no dropdown de matérias
     var materiaSelecionada = document.getElementById("materias").value;
 
     // Obtém a tabela de notas
@@ -58,7 +59,7 @@ function mostrarNotas() {
         </tr>
     `;
 
-    // Simula dados de alunos e notas para a matéria selecionada (pode ser substituído por dados reais)
+
     var dadosNotas = [];
 
     if (materiaSelecionada === "logica") {
@@ -84,8 +85,56 @@ function mostrarNotas() {
             { aluno: "Gabriel Moreira", nota: 7.5 },
             { aluno: "Guilherme Ferreira", nota: 6.0 }
             // Adicione mais alunos e notas conforme necessário
+        ]
+    } else if (materiaSelecionada === "poo") {
+        dadosNotas = [
+            { aluno: "Amanda Almeida", nota: "-" },
+            { aluno: "Ana Souza", nota: "-" },
+            { aluno: "Beatriz Martins", nota: "-" },
+            { aluno: "Bruno Rodrigues", nota: "-" },
+            { aluno: "Camila Costa", nota: "-" },
+            { aluno: "Felipe Pereira", nota: "-" },
+            { aluno: "Gabriel Moreira", nota: "-" },
+            { aluno: "Guilherme Ferreira", nota: "-" }
+            // Adicione mais alunos e notas conforme necessário
         ];
-    }
+    } else if (materiaSelecionada === "htmlECss") {
+        dadosNotas = [
+            { aluno: "Amanda Almeida", nota: 8.0 },
+            { aluno: "Ana Souza", nota: 7.5 },
+            { aluno: "Beatriz Martins", nota: 4.0 },
+            { aluno: "Bruno Rodrigues", nota: 3.5 },
+            { aluno: "Camila Costa", nota: 9.0 },
+            { aluno: "Felipe Pereira", nota: 4.5 },
+            { aluno: "Gabriel Moreira", nota: 7.5 },
+            { aluno: "Guilherme Ferreira", nota: 6.0 }
+            // Adicione mais alunos e notas conforme necessário
+        ]
+    } else if (materiaSelecionada === "calculo_01") {
+        dadosNotas = [
+            { aluno: "Amanda Almeida", nota: 8.0 },
+            { aluno: "Ana Souza", nota: 7.5 },
+            { aluno: "Beatriz Martins", nota: 4.0 },
+            { aluno: "Bruno Rodrigues", nota: 3.5 },
+            { aluno: "Camila Costa", nota: 9.0 },
+            { aluno: "Felipe Pereira", nota: 4.5 },
+            { aluno: "Gabriel Moreira", nota: 7.5 },
+            { aluno: "Guilherme Ferreira", nota: 6.0 }
+            // Adicione mais alunos e notas conforme necessário
+        ]
+    } else if (materiaSelecionada === "calculo_02") {
+        dadosNotas = [
+            { aluno: "Amanda Almeida", nota: "-" },
+            { aluno: "Ana Souza", nota: "-" },
+            { aluno: "Beatriz Martins", nota: "-" },
+            { aluno: "Bruno Rodrigues", nota: "-" },
+            { aluno: "Camila Costa", nota: "-" },
+            { aluno: "Felipe Pereira", nota: "-" },
+            { aluno: "Gabriel Moreira", nota: "-" },
+            { aluno: "Guilherme Ferreira", nota: "-" }
+            // Adicione mais alunos e notas conforme necessário
+        ]
+    };
 
     // Preenche a tabela com os dados das notas e campos de entrada para editar
     for (var i = 0; i < dadosNotas.length; i++) {
@@ -109,18 +158,18 @@ function atualizarNota(indice) {
     mostrarNotas();
 }
 
-// Chama a função mostrarNotas para exibir as notas iniciais
+
 mostrarNotas();
 
-// Função para carregar faltas com base na disciplina selecionada
+
 function mostrarFaltas() {
-    // Obtém o valor selecionado no dropdown de matérias
+
     var materiaSelecionada = document.getElementById("disciplinas-faltas").value;
 
-    // Obtém a tabela de faltas
+
     var faltasTable = document.getElementById("faltas-table");
 
-    // Limpa a tabela de faltas
+
     faltasTable.innerHTML = "";
 
     // Adiciona o cabeçalho da tabela de faltas
@@ -156,9 +205,53 @@ function mostrarFaltas() {
             { aluno: "Gabriel Moreira", faltas: 2 },
             { aluno: "Guilherme Ferreira", faltas: 1 }
         ];
+    } else if (materiaSelecionada === "poo") {
+        dadosFaltas = [
+            { aluno: "Amanda Almeida", faltas: 0 },
+            { aluno: "Ana Souza", faltas: 0 },
+            { aluno: "Beatriz Martins", faltas: 0 },
+            { aluno: "Bruno Rodrigues", faltas: 0 },
+            { aluno: "Camila Costa", faltas: 0 },
+            { aluno: "Felipe Pereira", faltas: 0 },
+            { aluno: "Gabriel Moreira", faltas: 0 },
+            { aluno: "Guilherme Ferreira", faltas: 0 }
+        ];
+    } else if (materiaSelecionada === "htmlECss") {
+        dadosFaltas = [
+            { aluno: "Amanda Almeida", faltas: 1 },
+            { aluno: "Ana Souza", faltas: 4 },
+            { aluno: "Beatriz Martins", faltas: 2 },
+            { aluno: "Bruno Rodrigues", faltas: 3 },
+            { aluno: "Camila Costa", faltas: 0 },
+            { aluno: "Felipe Pereira", faltas: 3 },
+            { aluno: "Gabriel Moreira", faltas: 2 },
+            { aluno: "Guilherme Ferreira", faltas: 1 }
+        ];
+    } else if (materiaSelecionada === "calculo_01") {
+        dadosFaltas = [
+            { aluno: "Amanda Almeida", faltas: 1 },
+            { aluno: "Ana Souza", faltas: 4 },
+            { aluno: "Beatriz Martins", faltas: 2 },
+            { aluno: "Bruno Rodrigues", faltas: 3 },
+            { aluno: "Camila Costa", faltas: 0 },
+            { aluno: "Felipe Pereira", faltas: 3 },
+            { aluno: "Gabriel Moreira", faltas: 2 },
+            { aluno: "Guilherme Ferreira", faltas: 1 }
+        ];
+    } else if (materiaSelecionada === "calculo_02") {
+        dadosFaltas = [
+            { aluno: "Amanda Almeida", faltas: 0 },
+            { aluno: "Ana Souza", faltas: 0 },
+            { aluno: "Beatriz Martins", faltas: 0 },
+            { aluno: "Bruno Rodrigues", faltas: 0 },
+            { aluno: "Camila Costa", faltas: 0 },
+            { aluno: "Felipe Pereira", faltas: 0 },
+            { aluno: "Gabriel Moreira", faltas: 0 },
+            { aluno: "Guilherme Ferreira", faltas: 0 }
+        ];
     }
 
-    // Preenche a tabela com os dados de faltas e campos de entrada para editar
+
     for (var i = 0; i < dadosFaltas.length; i++) {
         faltasTable.innerHTML += `
             <tr>
@@ -180,7 +273,7 @@ function atualizarFaltas(indice) {
     mostrarFaltas();
 }
 
-// Chama a função mostrarFaltas para exibir as faltas iniciais
+
 mostrarFaltas();
 
 // Adiciona a funcionalidade de upload de aulas
@@ -229,4 +322,29 @@ document.addEventListener("DOMContentLoaded", function () {
             novoAvisoInput.value = "";
         }
     });
+});
+
+document.querySelector('nav ul').addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+        const alvo = e.target.getAttribute('href').substring(1); // Remove o caractere "#" do href
+        abrirAba(alvo);
+    }
+});
+
+// Evento para matricular alunos quando o formulário de matrícula é enviado
+document.getElementById("matricular-alunos-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Impede o envio padrão do formulário
+
+    // Obtém os valores selecionados no formulário
+    const disciplinaSelecionada = document.getElementById("disciplinas-selecionadas").value;
+    const alunoSelecionado = document.getElementById("alunos-selecionados").value;
+
+    // Realize o processamento necessário para matricular o aluno na disciplina
+    // Isso pode incluir uma chamada AJAX para o servidor ou outra lógica de matrícula
+
+    // Exemplo de mensagem de sucesso (substitua por sua lógica real)
+    alert(`Aluno ${alunoSelecionado} matriculado na disciplina ${disciplinaSelecionada}.`);
+
+    // Limpa o formulário após a matrícula
+    document.getElementById("matricular-alunos-form").reset();
 });
