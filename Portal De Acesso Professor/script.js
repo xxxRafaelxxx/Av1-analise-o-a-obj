@@ -43,13 +43,13 @@ function mostrarNotas() {
 
     var materiaSelecionada = document.getElementById("materias").value;
 
-    // Obtém a tabela de notas
+
     var notasTable = document.getElementById("notas-table");
 
-    // Limpa a tabela de notas
+
     notasTable.innerHTML = "";
 
-    // Adiciona o cabeçalho da tabela
+
     notasTable.innerHTML += `
         <tr>
             <th>Aluno</th>
@@ -58,7 +58,7 @@ function mostrarNotas() {
         </tr>
     `;
 
-    // Simula dados de alunos e notas para a matéria selecionada (pode ser substituído por dados reais)
+
     var dadosNotas = [];
 
     if (materiaSelecionada === "logica") {
@@ -71,7 +71,7 @@ function mostrarNotas() {
             { aluno: "Felipe Pereira", nota: 4.0 },
             { aluno: "Gabriel Moreira", nota: 3.5 },
             { aluno: "Guilherme Ferreira", nota: 7.0 }
-            // Adicione mais alunos e notas conforme necessário
+
         ];
     } else if (materiaSelecionada === "estrutura") {
         dadosNotas = [
@@ -83,11 +83,11 @@ function mostrarNotas() {
             { aluno: "Felipe Pereira", nota: 4.5 },
             { aluno: "Gabriel Moreira", nota: 7.5 },
             { aluno: "Guilherme Ferreira", nota: 6.0 }
-            // Adicione mais alunos e notas conforme necessário
+
         ];
     }
 
-    // Preenche a tabela com os dados das notas e campos de entrada para editar
+
     for (var i = 0; i < dadosNotas.length; i++) {
         notasTable.innerHTML += `
             <tr>
@@ -99,31 +99,28 @@ function mostrarNotas() {
     }
 }
 
-// Função para atualizar a nota
+
 function atualizarNota(indice) {
     var novaNota = document.getElementById(`nota-${indice}`).value;
-    // Faça o processamento necessário para atualizar a nota no servidor ou armazenamento local
-    // Pode ser uma chamada AJAX ou outra forma de atualização
 
-    // Atualiza a tabela de notas
     mostrarNotas();
 }
 
-// Chama a função mostrarNotas para exibir as notas iniciais
+s
 mostrarNotas();
 
-// Função para carregar faltas com base na disciplina selecionada
+
 function mostrarFaltas() {
-    // Obtém o valor selecionado no dropdown de matérias
+
     var materiaSelecionada = document.getElementById("disciplinas-faltas").value;
 
-    // Obtém a tabela de faltas
+
     var faltasTable = document.getElementById("faltas-table");
 
-    // Limpa a tabela de faltas
+
     faltasTable.innerHTML = "";
 
-    // Adiciona o cabeçalho da tabela de faltas
+
     faltasTable.innerHTML += `
         <tr>
             <th>Aluno</th>
@@ -158,7 +155,7 @@ function mostrarFaltas() {
         ];
     }
 
-    // Preenche a tabela com os dados de faltas e campos de entrada para editar
+
     for (var i = 0; i < dadosFaltas.length; i++) {
         faltasTable.innerHTML += `
             <tr>
@@ -170,20 +167,6 @@ function mostrarFaltas() {
     }
 }
 
-// Função para atualizar as faltas
-function atualizarFaltas(indice) {
-    var novasFaltas = document.getElementById(`faltas-${indice}`).value;
-    // Faça o processamento necessário para atualizar as faltas no servidor ou armazenamento local
-    // Pode ser uma chamada AJAX ou outra forma de atualização
-
-    // Atualiza a tabela de faltas
-    mostrarFaltas();
-}
-
-// Chama a função mostrarFaltas para exibir as faltas iniciais
-mostrarFaltas();
-
-// Adiciona a funcionalidade de upload de aulas
 const aulasList = document.querySelector("#aulas ul");
 const aulaUploadInput = document.querySelector("#aula-upload");
 const aulaSubmitButton = document.querySelector("#aula-submit");
@@ -191,42 +174,137 @@ const aulaSubmitButton = document.querySelector("#aula-submit");
 aulaSubmitButton.addEventListener("click", function () {
     const nomeAula = aulaUploadInput.value;
     if (nomeAula) {
-        // Crie um novo elemento de lista e adicione-o à lista de aulas
+
         const novoItem = document.createElement("li");
         novoItem.innerHTML = `<a href="${nomeAula}">${nomeAula}</a>`;
         aulasList.appendChild(novoItem);
 
-        // Limpe o campo de upload
+
         aulaUploadInput.value = "";
     }
 });
 
-// Adicione o seguinte código JavaScript ao seu script.js para manipular os avisos
+
 document.addEventListener("DOMContentLoaded", function () {
-    // Seleciona o formulário de novo aviso
+
     const novoAvisoForm = document.getElementById("novo-aviso-form");
 
-    // Seleciona a lista de avisos
+
     const listaAvisos = document.getElementById("lista-avisos");
 
-    // Adiciona um evento de envio ao formulário de novo aviso
-    novoAvisoForm.addEventListener("submit", function (e) {
-        e.preventDefault(); // Impede o envio padrão do formulário
 
-        // Obtém o valor do novo aviso do campo de entrada
+    novoAvisoForm.addEventListener("submit", function (e) {
+        e.preventDefault();
         const novoAvisoInput = document.getElementById("novo-aviso");
         const novoAvisoTexto = novoAvisoInput.value;
 
         if (novoAvisoTexto.trim() !== "") {
-            // Cria um novo elemento de lista (li) para o aviso
+
             const novoAvisoItem = document.createElement("li");
             novoAvisoItem.textContent = novoAvisoTexto;
 
-            // Adiciona o novo aviso à lista de avisos
+
             listaAvisos.appendChild(novoAvisoItem);
 
-            // Limpa o campo de entrada
+
             novoAvisoInput.value = "";
         }
     });
+});
+
+// Array de comentários fictícios
+const comentarios = [
+    { nome: "João", comentario: "Ótima aula!" },
+    { nome: "Maria", comentario: "Gostei muito do vídeo." },
+    { nome: "Carlos", comentario: "Esse assunto é muito importante." },
+];
+
+// Função para carregar os comentários na lista
+function carregarComentarios() {
+    const listaComentarios = document.getElementById("lista-comentarios");
+
+    // Limpa a lista atual
+    listaComentarios.innerHTML = '';
+
+    // Adiciona os comentários à lista
+    comentarios.forEach(comentario => {
+        const li = document.createElement("li");
+        li.innerHTML = `<strong>${comentario.nome}:</strong> ${comentario.comentario}`;
+        listaComentarios.appendChild(li);
+    });
+}
+
+// Função para adicionar um novo comentário
+function adicionarComentario(nome, comentario) {
+    comentarios.push({ nome, comentario });
+    carregarComentarios();
+}
+
+// Formulário para adicionar novo comentário
+const novoComentarioForm = document.getElementById("novo-comentario-form");
+
+novoComentarioForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Obtém os valores do formulário
+    const nome = "Seu Nome"; // Você pode substituir pelo nome do usuário logado
+    const comentario = document.getElementById("novo-comentario").value;
+
+    // Adiciona o novo comentário
+    adicionarComentario(nome, comentario);
+
+    // Limpa o campo de texto
+    document.getElementById("novo-comentario").value = '';
+});
+
+// Chama a função para carregar os comentários na inicialização
+carregarComentarios();
+
+// No seu arquivo "script.js"
+
+// 1. Estrutura de dados para armazenar as aulas
+const aulas = [
+    { nome: "Aula 1", link: "https://www.youtube.com/aula1" },
+    { nome: "Aula 2", link: "https://www.youtube.com/aula2" },
+];
+
+// 2. Função para exibir as aulas na lista
+function exibirAulas() {
+    const listaAulas = document.getElementById("lista-aulas");
+
+    // Limpa a lista atual
+    listaAulas.innerHTML = '';
+
+    // Percorre o array de aulas e cria elementos HTML para cada aula
+    aulas.forEach(aula => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = aula.link;
+        a.textContent = aula.nome;
+        li.appendChild(a);
+        listaAulas.appendChild(li);
+    });
+}
+
+// Chama a função para exibir as aulas inicialmente
+exibirAulas();
+
+// 3. Evento de envio do formulário para adicionar novas aulas
+const novoAulaForm = document.getElementById("upload-aulas-form");
+
+novoAulaForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nomeAula = document.getElementById("nova-aula").value;
+    const linkAula = document.getElementById("link-aula").value;
+
+    // Adiciona a nova aula ao array de aulas
+    aulas.push({ nome: nomeAula, link: linkAula });
+
+    // Limpa os campos do formulário
+    document.getElementById("nova-aula").value = '';
+    document.getElementById("link-aula").value = '';
+
+    // Chama a função para exibir as aulas atualizadas
+    exibirAulas();
 });

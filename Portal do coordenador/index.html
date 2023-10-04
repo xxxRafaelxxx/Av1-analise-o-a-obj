@@ -20,6 +20,7 @@
             <li><a href="#cadastrarProfessores">Cadastrar Professores</a></li>
             <li><a href="#notas">Notas</a></li>
             <li><a href="#faltas">Faltas</a></li>
+            <li><a href="../Tela de login/tela_de_login.html">Sair</a></li>
 
         </ul>
     </nav>
@@ -88,27 +89,52 @@
             </section>
             <section id="cadastrarProfessores" class="aba">
                 <h2>Cadastrar Professores</h2>
-                <form id="matricular-professores-form">
-                    <label for="disciplinas-selecionadas">Selecione a disciplina:</label>
-                    <select id="disciplinas-selecionadas">
-                        <option value="calculo_01">Calculo 01</option>
-                        <option value="calculo_02">Calculo 02</option>
-                        <option value="logica">Lógica De Programação</option>
-                        <option value="estrutura">Estrutura de Dados</option>
-                        <option value="htmlECss">Html e Css Básico</option>
-                        <option value="poo">POO</option>
+                <form id="cadastrar-professor-form">
+                    <label for="nomeProfessor">Nome do Professor:</label>
+                    <input type="text" id="nomeProfessor" name="nomeProfessor" required><br><br>
+                    <label for="emailProfessor">Email do Professor:</label>
+                    <input type="email" id="emailProfessor" name="emailProfessor" required><br><br>
+                    <label for="disciplinaProfessor">Disciplina do Professor:</label>
+                    <input type="text" id="disciplinaProfessor" name="disciplinaProfessor" required><br><br>
+                    <label for="disciplinaProfessor">Disciplina do Professor:</label>
+                    <input type="text" id="disciplinaProfessor" name="disciplinaProfessor" required><br><br>
+                    <label for="disciplinaProfessor">Disciplina do Professor:</label>
+                    <input type="text" id="disciplinaProfessor" name="disciplinaProfessor" required><br><br>
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" placeholder="Senha" required>
+                    <br><br>
+                    <label for="repetirSenha">Repetir Senha:</label>
+                    <input type="password" id="repetirSenha" placeholder="Repetir senha" required>
+                    <br><br>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
+                    <br><br>
+                    <label for="cpf">Cpf:</label>
+                    <input type="text" id="cpf" placeholder="Cpf" required>
+                    <br><br>
+                    <label for="cep">Cep:</label>
+                    <input type="text" id="cep" placeholder="Cep" required>
+                    <br><br>
+                    <label for="nomeProfessor">Nome do Professor:</label>
+                    <input type="text" id="cidadeEstado" placeholder="Cidade/estado" required>
+                    <br><br>
+                    <label for="dataDeNascimento">Data De Nascimento:</label>
+                    <input type="date" id="nascimento" placeholder="Nacimento" required>
+                    <br><br>
+                    <label for="Sexo">Sexo:</label>
+                    <select id="sexo" name="Sexo" required>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                    <br><br>
 
-                    </select>
-                    <label for="professores-selecionados">Selecione o professor:</label>
-                    <select id="professores-selecionados">
-                        <option value="Thiago Rodrigues">Thiago Rodrigues</option>
-                        <option value="Thais Souza">Thais Souza</option>
-                        <option value="Pedro Martins">Pedro Martins</option>
-                        <option value="Ricardo Rodrigues">Bruno Rodrigues</option>
-                    </select>
-                    <button type="submit">Matricular</button>
+                    <button type="submit">Cadastrar Professor</button>
+                    <br><br>
+                    <br><br>
                 </form>
             </section>
+
             <section id="notas" class="aba">
                 <h2>Notas</h2>
                 <label for="materias">Selecione a matéria:</label>

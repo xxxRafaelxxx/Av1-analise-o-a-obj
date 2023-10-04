@@ -19,19 +19,16 @@
             <li><a href="#faltas">Faltas</a></li>
             <li><a href="#notas">Notas</a></li>
             <li><a href="#aulas">Aulas</a></li>
+            <li><a href="../Tela de login/tela_de_login.html">Sair</a></li>
         </ul>
     </nav>
     <main>
         <div class="conteudo">
-            <!-- Adicione este código à seção de avisos no seu HTML -->
             <section id="avisos" class="aba">
                 <h2>Avisos</h2>
                 <div id="avisos-content">
-                    <!-- O conteúdo dos avisos será inserido aqui pelo JavaScript -->
                     <ul id="lista-avisos">
-                        <!-- Avisos serão adicionados dinamicamente aqui -->
                     </ul>
-                    <!-- Formulário para adicionar novos avisos -->
                     <form id="novo-aviso-form">
                         <label for="novo-aviso">Novo Aviso:</label>
                         <input type="text" id="novo-aviso" name="novoAviso" required>
@@ -57,6 +54,8 @@
                     <label for="cursos">Disciplina:</label>
                     <input type="text" id="cursos" name="cursos" readonly value="Estrutura De Dados"><br><br>
                     <button type="submit">Salvar</button>
+                    <br><br>
+                    <br><br>
                 </form>
             </section>
             <section id="notas" class="aba">
@@ -66,60 +65,51 @@
                     <option value="logica">Lógica de Programação</option>
                     <option value="estrutura">Estrutura de Dados</option>
                 </select>
-
-                <!-- Tabela para exibir as notas -->
                 <table id="notas-table">
                     <tr>
                         <th>Aluno</th>
                         <th>Nota</th>
-                        <th>Ações</th> <!-- Coluna para botões de ação -->
+                        <th>Ações</th>
                     </tr>
-                    <!-- As notas serão inseridas aqui dinamicamente pelo JavaScript -->
                 </table>
             </section>
-            <!-- Seção de Faltas -->
             <section id="faltas" class="aba">
                 <h2>Faltas</h2>
                 <label for="disciplinas-faltas">Selecione a matéria:</label>
                 <select id="disciplinas-faltas" onchange="mostrarFaltas()">
                     <option value="logica">Lógica de Programação</option>
                     <option value="estrutura">Estrutura de Dados</option>
-                    <!-- Adicione mais disciplinas conforme necessário -->
                 </select>
-
-                <!-- Tabela para exibir as faltas -->
                 <table id="faltas-table">
                     <tr>
                         <th>Aluno</th>
                         <th>Faltas</th>
-                        <th>Ações</th> <!-- Coluna para botões de ação -->
+                        <th>Ações</th>
                     </tr>
-                    <!-- As faltas serão inseridas aqui dinamicamente pelo JavaScript -->
                 </table>
             </section>
-
             <section id="aulas" class="aba">
                 <h2>Aulas</h2>
-                <ul>
-                    <li><a href="https://youtu.be/8mei6uVttho?si=35HdEzg1wZvaPtWH" target="_blank">Lógica de Programação
-                            - aula 01</a>
-                    </li>
-                    <br><br>
-                    <li><a href="https://youtu.be/M2Af7gkbbro?si=vB49P8Jz5jADkZiq" target="_blank">Lógica de Programação
-                            - aula 02</a>
-                    </li>
-                    <br><br>
-                    <li><a href="https://youtu.be/RDrfZ-7WE8c?si=Khacd-ybBmiEf8Cq" target="_blank">Lógica de Programação
-                            - aula 03</a>
-                    </li>
-                    <br></br>
-                    <li><a href="https://youtu.be/iE3_JWR-yaE?si=lun-6gv9DL6LwZao" target="_blank">Estrutura de Dados -
-                            aula 01</a></li>
-                    <br></br>
-                    <li><a href="https://youtu.be/KVlGx-9CuO4?si=g3LyTLUDUj0Bo7vh" target="_blank">Estrutura de Dados -
-                            aula 02</a></li>
-                    <br></br>
+                <div class="video-player">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VfIXgGJWLvA" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="comentarios">
+                    <h3>Comentários</h3>
+                    <ul id="lista-comentarios">
+
+                    </ul>
+                </div>
+                <form id="novo-comentario-form">
+                    <label for="novo-comentario">Novo Comentário:</label>
+                    <textarea id="novo-comentario" name="novoComentario" required></textarea>
+                    <button type="submit">Adicionar Comentário</button>
+                </form>
+                <br></br>
+                <ul id="lista-aulas">
+
                 </ul>
+                <br></br>
                 <form id="upload-aulas-form">
                     <h3>Adicionar Nova Aula</h3>
                     <label for="nova-aula">Nome da Aula:</label>
@@ -128,6 +118,9 @@
                     <input type="url" id="link-aula" name="linkAula" required>
                     <button type="submit">Adicionar</button>
                 </form>
+                <br></br>
+                <br></br>
+                <br></br>
             </section>
         </div>
     </main>
